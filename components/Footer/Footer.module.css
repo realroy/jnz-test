@@ -1,3 +1,6 @@
 .container {
   padding: 1rem 2rem;
+  width: 100%;
+  color: #fff;
+  background: #000000;
 }
