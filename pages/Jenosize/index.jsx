@@ -1,15 +1,18 @@
-import Head from 'next/head'
+import Head from "next/head";
+import { DefaultLayout } from "../../layouts";
 
 const JenosizeIndexPage = () => {
-  const title = "Finding X, Y and Z"
+  const title = "Finding X, Y and Z";
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-      <h1>{title}</h1>
+      <DefaultLayout>
+        <h1>{title}</h1>
+      </DefaultLayout>
     </>
-  )
-}
+  );
+};
 
-export default JenosizeIndexPage
+export default JenosizeIndexPage;
