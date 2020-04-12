@@ -1,8 +1,10 @@
 import Router from 'next/router'
+import { useEffect } from 'react'
 
 export default () => {
-	Router.push('/Jenosize')
-	
+	useEffect(() => {
+		Router.push('/Jenosize')
+	}, [])
 	return (
 		<>
 			Redirect
