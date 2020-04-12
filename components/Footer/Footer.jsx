@@ -1,7 +1,7 @@
 import styles from './Footer.module.css'
 
 export const Footer = () => (
-  <nav>
+  <footer className={styles.container}>
     Footer
-  </nav>
+  </footer>
 )
