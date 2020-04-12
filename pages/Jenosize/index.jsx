@@ -7,4 +7,4 @@ const JenosizeIndexPage = () => {
   )
 }
 
-
+export default JenosizeIndexPage
