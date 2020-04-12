@@ -1,8 +1,13 @@
+import Head from 'next/head'
 
 const JenosizeIndexPage = () => {
+  const title = "Finding X, Y and Z"
   return (
     <>
-      <h1>Finding X, Y and Z</h1>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      <h1>{title}</h1>
     </>
   )
 }
