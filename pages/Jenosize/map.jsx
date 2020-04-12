@@ -1,15 +1,21 @@
-import Head from 'next/head'
+import Head from "next/head";
+
+import { DefaultLayout } from "../../layouts";
+import { Map } from "../../components";
+
+const title = "Jenosize Map";
 
 const JenosizeMapPage = () => {
-  const title = "Jenosize Map"
   return (
     <>
       <Head>
         <title>{title}</title>
       </Head>
-      <h1>{title}</h1>
+      <DefaultLayout>
+        <Map />
+      </DefaultLayout>
     </>
-  )
-}
+  );
+};
 
-export default JenosizeMapPage
+export default JenosizeMapPage;
