@@ -120,7 +120,7 @@ export default async (req, res) => {
   const values = req.query["values[]"].split(",");
   
   if (values.length !== 4 || values.some(v => v.length > 1)) {
-    res.send('no')
+    return res.send('no')
   }
   
   solve24(values.join(''));
