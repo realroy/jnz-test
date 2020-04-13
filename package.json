@@ -9,8 +9,12 @@
     "build:static": "next build && next out"
   },
   "dependencies": {
+    "@googlemaps/google-maps-services-js": "^2.5.2",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "next": "^9.3.4",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-google-location": "^1.2.2"
   }
 }

@@ -8,33 +8,37 @@ const jenosize = {
 
 export const Map = () => {
   useEffect(() => {
-    window.initMap = function initMap() {
-      if (!google) {
-        return;
-      }
+    fetch("/api/Jenosize/map")
+      .then((res) => res.json())
+      .then(({ API_KEY }) => {
+        window.initMap = function initMap() {
+          if (!google) {
+            return;
+          }
 
-      const map = document.getElementById("map");
+          const map = document.getElementById("map");
 
-      window.map = new google.maps.Map(map, {
-        center: jenosize,
-        zoom: 20,
-      });
+          window.map = new google.maps.Map(map, {
+            center: jenosize,
+            zoom: 20,
+          });
 
-      const marker = new google.maps.Marker({ position: jenosize, map: window.map });
-    };
+          new google.maps.Marker({ position: jenosize, map: window.map });
+        };
 
-    const googleMapScript = document.createElement("script");
-    googleMapScript.src =
-      "https://maps.googleapis.com/maps/api/js?key=&callback=initMap";
-    googleMapScript.defer = true;
-    googleMapScript.async = true;
+        if (document.getElementById("googleMap")) {
+          return;
+        }
+        const googleMapScript = document.createElement("script");
+        googleMapScript.id = "googleMap";
+        googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
+        googleMapScript.defer = true;
+        googleMapScript.async = true;
 
-    document.body.appendChild(googleMapScript);
+        document.body.appendChild(googleMapScript);
+      })
+      .catch(console.error);
   }, []);
 
-  return (
-    <div id="map" className={styles["container"]}>
-      <div></div>
-    </div>
-  );
+  return <div id="map" className={styles["container"]}></div>;
 };
